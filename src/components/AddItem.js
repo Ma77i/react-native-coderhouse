@@ -13,7 +13,7 @@ const AddItem = (props) => {
         onChangeText={onChange}
         value={value}
       />
-      <Button title="ADD" onPress={onAddItem} />
+      <Button title="ADD ITEM" onPress={onAddItem} />
     </View>
   );
 };
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    width: "80%",
+    width: "75%",
     borderBottomColor: "black",
     borderBottomWidth: 1,
   },

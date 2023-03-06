@@ -27,7 +27,9 @@ const ModalItem = ({ visible, onDelete, item, closeModal }) => {
         <Button 
           style={styles.button}
           onPress={closeModal} 
-          title="RETURN" />
+          title="RETURN" 
+          color="#f15"
+        />
       </View>
     </Modal>
   );

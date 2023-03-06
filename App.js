@@ -4,6 +4,7 @@ import { useState } from "react";
 import ModalItem from "./src/components/Modal";
 import AddItem from "./src/components/AddItem";
 import List from "./src/components/List/List";
+import ItemDetail from "./src/components/ItemDetail";
 
 export default function App() {
 
@@ -13,10 +14,11 @@ export default function App() {
   const [itemSelected, setItemSelected] = useState({})
   const [modalVisible, setModalVisible] = useState(false)
 
+  const [switchViews, setSwitchViews] = useState(false)
+
   const onHandlerChangeItem = (text) => setTextItem(text)
 
   const addItem = () => { 
-    console.log("TEXTITEM: ", textItem)
     setItemList(currentItems => [
       ...currentItems, {
         id: Math.random().toString(),
@@ -42,6 +44,8 @@ export default function App() {
     setModalVisible(false)
   }
 
+  if (switchViews === true) return <ItemDetail />
+
   return (
     <View style={{ padding: 30 }}>
       <ModalItem
@@ -62,7 +66,6 @@ export default function App() {
       <View>
         <List
           onHandlerModal={onHandlerModal}
-          
           itemList={itemList}
         />
       </View>
